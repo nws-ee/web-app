@@ -100,15 +100,17 @@ export class CreateClientComponent {
 
   setDatatables(): void {
     this.datatables = [];
-    let legalFormTypeVal = 'Person';
+    let legalFormTypeVal = 'person';
     if (this.legalFormType === 2) {
-      legalFormTypeVal = 'Entity';
+      legalFormTypeVal = 'entity';
     }
-    this.clientTemplate.datatables.forEach((datatable: any) => {
-      if (datatable.entitySubType === legalFormTypeVal) {
-        this.datatables.push(datatable);
-      }
-    });
+    if (this.clientTemplate.datatables) {
+      this.clientTemplate.datatables.forEach((datatable: any) => {
+        if (datatable.entitySubType.toLowerCase() === legalFormTypeVal) {
+          this.datatables.push(datatable);
+        }
+      });
+    }
   }
 
   legalFormChange(eventData: { legalForm: number }) {

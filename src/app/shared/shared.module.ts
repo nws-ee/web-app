@@ -21,11 +21,14 @@ import { NotificationsTrayComponent } from './notifications-tray/notifications-t
 import { SearchToolComponent } from './search-tool/search-tool.component';
 import { KeyboardShortcutsDialogComponent } from './keyboard-shortcuts-dialog/keyboard-shortcuts-dialog.component';
 import { ServerSelectorComponent } from './server-selector/server-selector.component';
+import { TenantSelectorComponent } from './tenant-selector/tenant-selector.component';
 
 /** Custom Modules */
 import { IconsModule } from './icons.module';
 import { MaterialModule } from './material.module';
 import { TranslateModule } from '@ngx-translate/core';
+import { ExternalIdentifierComponent } from './external-identifier/external-identifier.component';
+import { PipesModule } from 'app/pipes/pipes.module';
 
 /**
  * Shared Module
@@ -39,6 +42,7 @@ import { TranslateModule } from '@ngx-translate/core';
     MaterialModule,
     ReactiveFormsModule,
     TranslateModule.forRoot(),
+    PipesModule
   ],
   declarations: [
     FormfieldComponent,
@@ -57,7 +61,9 @@ import { TranslateModule } from '@ngx-translate/core';
     ErrorDialogComponent,
     NotificationsTrayComponent,
     SearchToolComponent,
-    ServerSelectorComponent
+    ServerSelectorComponent,
+    TenantSelectorComponent,
+    ExternalIdentifierComponent
   ],
   exports: [
     FileUploadComponent,
@@ -73,7 +79,9 @@ import { TranslateModule } from '@ngx-translate/core';
     MaterialModule,
     FormsModule,
     ReactiveFormsModule,
-    TranslateModule
+    TranslateModule,
+    TenantSelectorComponent,
+    ExternalIdentifierComponent
   ]
 })
 export class SharedModule { }
