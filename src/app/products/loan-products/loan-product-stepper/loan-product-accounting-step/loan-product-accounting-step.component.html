@@ -40,6 +40,18 @@
         </mat-error>
       </mat-form-field>
 
+      <mat-form-field fxFlex="48%">
+        <mat-label>Purshased Asset</mat-label>
+        <mat-select formControlName="purshasedAssetAccountId" required>
+          <mat-option *ngFor="let assetAccount of assetAccountData" [value]="assetAccount.id">
+            ({{ assetAccount.glCode }}) {{ assetAccount.name }}
+          </mat-option>
+        </mat-select>
+        <mat-error>
+          Purshased Asset is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+
       <div *ngIf="loanProductAccountingForm.value.accountingRule === 3 || loanProductAccountingForm.value.accountingRule === 4" fxFlexFill fxLayout="row wrap" fxLayoutGap="2%" fxLayout.lt-md="column">
 
         <mat-form-field fxFlex="48%">

@@ -2,6 +2,18 @@
 
   <div fxLayout="row wrap" fxLayoutGap="2%" fxLayout.lt-md="column" fxLayoutAlign.gt-sm="start center">
 
+    <mat-form-field fxFlex="98%">
+      <mat-label>Islamic Finance Mode</mat-label>
+      <mat-select formControlName="islamicFinanceProductType" required>
+        <mat-option *ngFor="let islamicFinanceProductType of islamicFinanceProductTypeData" [value]="islamicFinanceProductType.id">
+          {{ islamicFinanceProductType.value }}
+        </mat-option>
+      </mat-select>
+      <mat-error>
+        Islamic Finance Product Type is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+
     <mat-form-field fxFlex="48%">
       <mat-label>Product Name</mat-label>
       <input matInput formControlName="name" required>

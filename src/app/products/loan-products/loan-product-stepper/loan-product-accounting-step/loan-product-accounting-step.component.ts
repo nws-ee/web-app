@@ -66,6 +66,7 @@ export class LoanProductAccountingStepComponent implements OnInit {
         /* falls through */
       case 2:
         this.loanProductAccountingForm.patchValue({
+          'purshasedAssetAccountId': this.loanProductsTemplate.accountingMappings.purshasedAssetAccount.id,
           'fundSourceAccountId': this.loanProductsTemplate.accountingMappings.fundSourceAccount.id,
           'loanPortfolioAccountId': this.loanProductsTemplate.accountingMappings.loanPortfolioAccount.id,
           'transfersInSuspenseAccountId': this.loanProductsTemplate.accountingMappings.transfersInSuspenseAccount.id,
@@ -101,6 +102,7 @@ export class LoanProductAccountingStepComponent implements OnInit {
     this.loanProductAccountingForm.get('accountingRule').valueChanges
       .subscribe((accountingRule: any) => {
         if (accountingRule >= 2 && accountingRule <= 4) {
+          this.loanProductAccountingForm.addControl('purshasedAssetAccountId', new FormControl('', Validators.required));
           this.loanProductAccountingForm.addControl('fundSourceAccountId', new FormControl('', Validators.required));
           this.loanProductAccountingForm.addControl('loanPortfolioAccountId', new FormControl('', Validators.required));
           this.loanProductAccountingForm.addControl('transfersInSuspenseAccountId', new FormControl('', Validators.required));
@@ -126,6 +128,7 @@ export class LoanProductAccountingStepComponent implements OnInit {
               }
             });
         } else {
+          this.loanProductAccountingForm.removeControl('purshasedAssetAccountId');
           this.loanProductAccountingForm.removeControl('fundSourceAccountId');
           this.loanProductAccountingForm.removeControl('loanPortfolioAccountId');
           this.loanProductAccountingForm.removeControl('transfersInSuspenseAccountId');

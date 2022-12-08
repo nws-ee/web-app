@@ -74,12 +74,15 @@
 
     <mat-form-field fxFlex="48%">
       <mat-label>Delinquency Bucket</mat-label>
-      <mat-select formControlName="delinquencyBucketId">
+      <mat-select formControlName="delinquencyBucketId" required>
         <mat-option *ngFor="let delinquencyBucket of delinquencyBucketData" [value]="delinquencyBucket.id">
           {{ delinquencyBucket.name }}
         </mat-option>
       </mat-select>
-    </mat-form-field>
+      <mat-error>
+        Delinquency is <strong>required</strong>
+      </mat-error>
+   </mat-form-field>
 
     <mat-divider fxFlex="98%"></mat-divider>
 
@@ -176,7 +179,7 @@
     <h3 fxFlex="23%" class="mat-h3">Interest Recalculation</h3>
 
     <mat-checkbox fxFlex="73%" labelPosition="before" formControlName="isInterestRecalculationEnabled" class="margin-b">
-      Recalculate Interest
+    Recalculate Interest
     </mat-checkbox>
 
     <div *ngIf="loanProductSettingsForm.value.isInterestRecalculationEnabled" fxFlexFill fxLayout="row wrap" fxLayoutGap="2%" fxLayout.lt-md="column">

@@ -22,6 +22,11 @@
         <mat-divider [inset]="true"></mat-divider>
 
         <div fxFlexFill>
+          <span fxFlex="40%">Islamic Finance Product Type:</span>
+          <span fxFlex="60%">{{ loanProduct.islamicFinanceProductType.value }}</span>
+        </div>
+
+        <div fxFlexFill>
           <span fxFlex="40%">Short Name:</span>
           <span fxFlex="60%">{{ loanProduct.shortName }}</span>
         </div>
@@ -613,6 +618,8 @@
           <h4 fxFlexFill class="mat-h4">Assets</h4>
 
           <div fxFlexFill fxLayout="row wrap" fxLayout.lt-md="column">
+            <span fxFlex="40%">Purshased Asset:</span>
+            <span fxFlex="60%">({{loanProduct.accountingMappings.purshasedAssetAccount.glCode}}) {{ loanProduct.accountingMappings.purshasedAssetAccount.name }}</span>
             <span fxFlex="40%">Loan portfolio:</span>
             <span fxFlex="60%">({{loanProduct.accountingMappings.loanPortfolioAccount.glCode}}) {{ loanProduct.accountingMappings.loanPortfolioAccount.name }}</span>
             <div fxFlexFill *ngIf="loanProduct.accountingRule.id === 3 || loanProduct.accountingRule.id === 4" fxLayout="row wrap" fxLayout.lt-md="column">

@@ -47,7 +47,7 @@
 
       <ng-container *ngFor="let item of buttonConfig.singleButtons" class="loan-span">
         <button mat-raised-button *mifosxHasPermission="item.taskPermissionName" (click)="loanAction(item.name)">
-          <i ng-class="{{item.icon}}"></i> {{item.name}} </button>
+          <i ng-class="{{item.icon}}"></i> ABCD {{item.name}} </button>
       </ng-container>
 
       <ng-container *ngIf="buttonConfig.optionsPayment.length" class="loan-span">

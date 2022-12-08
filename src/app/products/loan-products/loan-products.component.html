@@ -30,6 +30,11 @@
         <td mat-cell *matCellDef="let loanProduct"> {{ loanProduct.shortName }} </td>
       </ng-container>
 
+      <ng-container matColumnDef="islamicFinanceProductType">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Islamic Finance Product Type </th>
+        <td mat-cell *matCellDef="let loanProduct"> {{ loanProduct.islamicFinanceProductType.value }} </td>
+      </ng-container>
+
       <ng-container matColumnDef="closeDate">
         <th mat-header-cell *matHeaderCellDef mat-sort-header> Expiry Date </th>
         <td mat-cell *matCellDef="let loanProduct"> {{ loanProduct.closeDate  | dateFormat }} </td>

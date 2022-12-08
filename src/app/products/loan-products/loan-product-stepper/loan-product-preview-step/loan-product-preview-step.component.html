@@ -9,6 +9,11 @@
   <mat-divider fxFlexFill></mat-divider>
 
   <div fxFlexFill>
+    <span fxFlex="40%">Islamic Finance Product Type:</span>
+    <span fxFlex="60%">{{ loanProduct.islamicFinanceProductType | find:loanProductsTemplate.islamicFinanceProductTypeOptions:'id':'value' }}</span>
+  </div>
+
+  <div fxFlexFill>
     <span fxFlex="40%">Short Name:</span>
     <span fxFlex="60%">{{ loanProduct.shortName }}</span>
   </div>
@@ -604,6 +609,8 @@
     <h4 fxFlexFill class="mat-h4">Assets</h4>
 
     <div fxFlexFill fxLayout="row wrap" fxLayout.lt-md="column">
+      <span fxFlex="40%">Purshased Asset:</span>
+      <span fxFlex="60%">{{ loanProduct.purshasedAssetAccountId | find:loanProductsTemplate.accountingMappingOptions.assetAccountOptions:'id':'name' }}</span>
       <span fxFlex="40%">Loan portfolio:</span>
       <span fxFlex="60%">{{ loanProduct.loanPortfolioAccountId | find:loanProductsTemplate.accountingMappingOptions.assetAccountOptions:'id':'name' }}</span>
       <div fxFlexFill *ngIf="loanProduct.accountingRule === 3 || loanProduct.accountingRule === 4" fxLayout="row wrap" fxLayout.lt-md="column">

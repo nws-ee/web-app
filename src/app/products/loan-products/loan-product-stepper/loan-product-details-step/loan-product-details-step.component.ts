@@ -17,6 +17,7 @@ export class LoanProductDetailsStepComponent implements OnInit {
 
   loanProductDetailsForm: FormGroup;
 
+  islamicFinanceProductTypeData: any;
   fundData: any;
 
   minDate = new Date(2000, 0, 1);
@@ -36,8 +37,10 @@ export class LoanProductDetailsStepComponent implements OnInit {
 
   ngOnInit() {
     this.fundData = this.loanProductsTemplate.fundOptions;
+    this.islamicFinanceProductTypeData = this.loanProductsTemplate.islamicFinanceProductTypeOptions;
 
     this.loanProductDetailsForm.patchValue({
+      'islamicFinanceProductType': this.loanProductsTemplate.islamicFinanceProductType.id,
       'name': this.loanProductsTemplate.name,
       'shortName': this.loanProductsTemplate.shortName,
       'description': this.loanProductsTemplate.description,
@@ -50,6 +53,7 @@ export class LoanProductDetailsStepComponent implements OnInit {
 
   createLoanProductDetailsForm() {
     this.loanProductDetailsForm = this.formBuilder.group({
+      'islamicFinanceProductType': ['', Validators.required],
       'name': ['', Validators.required],
       'shortName': ['', Validators.required],
       'description': [''],
