@@ -60,8 +60,10 @@ export class LoanActionButtonResolver implements Resolve<Object> {
             return this.loansService.getLoanAccountResource(loanId, 'guarantors');
         } else if (loanActionButton === 'Create Guarantor') {
             return this.loansService.getGuarantorTemplate(loanId);
-        } else if (loanActionButton === 'Disburse') {
+        } else if (loanActionButton === 'Murabaha Sell') {
             return this.loansService.getLoanActionTemplate(loanId, 'disburse');
+        } else if (loanActionButton === 'Purchase') {
+            return this.loansService.getLoanActionTemplate(loanId, 'purchase');
         } else if (loanActionButton === 'Loan Screen Reports') {
             return this.loansService.getLoanScreenReportsData();
         } else if (loanActionButton === 'Approve') {

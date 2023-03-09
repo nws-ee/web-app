@@ -1,4 +1,4 @@
-Murabaha Sell
+Murabaha Purchase
 <div class="container">
 
   <mat-card>
@@ -91,7 +91,7 @@ Murabaha Sell
         <mat-card-actions fxLayout="row" fxLayout.xs="column" fxLayoutAlign="center" fxLayoutGap="5px">
           <button type="button" mat-raised-button [routerLink]="['../../general']">Cancel</button>
           <button mat-raised-button color="primary" [disabled]="!disbursementLoanForm.valid"
-            *mifosxHasPermission="'DISBURSE_LOAN'">Submit</button>
+            *mifosxHasPermission="'PURCHASE_LOAN'">Submit</button>
         </mat-card-actions>
 
       </mat-card-content>

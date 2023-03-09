@@ -84,7 +84,7 @@ export class LoansViewComponent implements OnInit {
 
       if (this.loanDetailsData.canDisburse) {
         this.buttonConfig.addButton({
-          name: 'Disburse',
+          name: 'Murabaha Sell',
           icon: 'fa fa-flag',
           taskPermissionName: 'DISBURSE_LOAN'
         });
@@ -113,6 +113,16 @@ export class LoansViewComponent implements OnInit {
         });
       }
 
+    }  else if (this.status === 'Purchased') {
+      // loan officer not assigned to loan, below logic
+      // helps to display otherwise not
+      if (!this.loanDetailsData.loanOfficerName) {
+        this.buttonConfig.addButton({
+          name: 'Assign Loan Officer',
+          icon: 'fa fa-user',
+          taskPermissionName: 'UPDATELOANOFFICER_LOAN'
+        });
+      }
     }
   }
 

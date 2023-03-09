@@ -44,6 +44,7 @@ import { RecoveryRepaymentComponent } from './loans-view/loan-account-actions/re
 import { ViewGuarantorsComponent } from './loans-view/loan-account-actions/view-guarantors/view-guarantors.component';
 import { CreateGuarantorComponent } from './loans-view/loan-account-actions/create-guarantor/create-guarantor.component';
 import { DisburseLoanAccountComponent } from './loans-view/loan-account-actions/disburse-loan-account/disburse-loan-account.component';
+import { PurchaseComponent } from './loans-view/loan-account-actions/purchase/purchase.component';
 import { DisburseComponent } from './loans-view/loan-account-actions/disburse/disburse.component';
 import { RejectLoanComponent } from './loans-view/loan-account-actions/reject-loan/reject-loan.component';
 import { WithdrawnByClientComponent } from './loans-view/loan-account-actions/withdrawn-by-client/withdrawn-by-client.component';
@@ -121,6 +122,7 @@ import { LoansAccountScheduleStepComponent } from './loans-account-stepper/loans
     LoansAccountViewGuarantorDetailsDialogComponent,
     DisburseLoanAccountComponent,
     RejectLoanComponent,
+    PurchaseComponent,
     DisburseComponent,
     WithdrawnByClientComponent,
     AddCollateralComponent,

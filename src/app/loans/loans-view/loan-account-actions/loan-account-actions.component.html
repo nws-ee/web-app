@@ -17,7 +17,8 @@
 <mifosx-create-guarantor [dataObject]="actionButtonData" *ngIf="actions['Create Guarantor']"></mifosx-create-guarantor>
 <mifosx-disburse-loan-account [dataObject]="actionButtonData" *ngIf="actions['Disburse To Savings']"></mifosx-disburse-loan-account>
 <mifosx-reject-loan *ngIf="actions['Reject']"></mifosx-reject-loan>
-<mifosx-disburse [dataObject]="actionButtonData" *ngIf="actions['Disburse']"></mifosx-disburse>
+<mifosx-disburse [dataObject]="actionButtonData" *ngIf="actions['Murabaha Sell']"></mifosx-disburse>
+<mifosx-purchase [dataObject]="actionButtonData" *ngIf="actions['Murabaha Purchase']"></mifosx-purchase>
 <mifosx-withdrawn-by-client *ngIf="actions['Withdrawn by Client']"></mifosx-withdrawn-by-client>
 <mifosx-add-collateral [dataObject]="actionButtonData" *ngIf="actions['Add Collateral']"></mifosx-add-collateral>
 <mifosx-undo-disbursal *ngIf="actions['Undo Disbursal']"></mifosx-undo-disbursal>

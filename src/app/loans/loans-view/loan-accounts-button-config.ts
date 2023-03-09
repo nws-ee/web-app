@@ -60,6 +60,30 @@ export class LoansAccountButtonConfiguration {
                     }
                 ];
                 break;
+            case 'Purchased':
+                this.buttonsArray = [
+                    {
+                        name: 'Murabaha Sell',
+                        icon: 'fa fa-flag',
+                        taskPermissionName: 'DISBURSE_LOAN',
+                    },
+                    {
+                        name: 'Add Loan Charge',
+                        icon: 'fa fa-plus',
+                        taskPermissionName: 'CREATE_LOANCHARGE',
+                    },
+                    {
+                        name: 'Foreclosure ??',
+                        icon: 'icon-dollar',
+                        taskPermissionName: 'FORECLOSURE_LOAN',
+                    },
+                    {
+                        name: 'Undo Purchase ??',
+                        icon: 'fa fa-undo',
+                        taskPermissionName: 'DISBURSALUNDO_LOAN',
+                    }
+                ];
+                break;
             case 'Submitted and pending approval':
                 this.buttonsArray = [
                     {
@@ -87,9 +111,9 @@ export class LoansAccountButtonConfiguration {
             case 'Approved':
                 this.buttonsArray = [
                     {
-                        name: 'Disburse',
+                        name: 'Murabaha Purchase',
                         icon: 'fa fa-flag',
-                        taskPermissionName: 'DISBURSE_LOAN',
+                        taskPermissionName: 'PURCHASE_LOAN',
                     },
                     {
                         name: 'Disburse to Savings',
@@ -236,6 +260,27 @@ export class LoansAccountButtonConfiguration {
                 this.optionPaymentArray = [];
                 break;
             case 'Approved':
+                this.optionArray = [
+                    {
+                        name: 'Add Loan Charge',
+                        taskPermissionName: 'CREATE_LOANCHARGE',
+                    },
+                    {
+                        name: 'View Guarantors',
+                        taskPermissionName: 'READ_GUARANTOR',
+                    },
+                    {
+                        name: 'Create Guarantor',
+                        taskPermissionName: 'CREATE_GUARANTOR',
+                    },
+                    {
+                        name: 'Loan Screen Report',
+                        taskPermissionName: 'READ_LOAN',
+                    },
+                ];
+                this.optionPaymentArray = [];
+                break;
+            case 'Purchased':
                 this.optionArray = [
                     {
                         name: 'Add Loan Charge',
